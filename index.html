@@ -57,7 +57,6 @@
       }
 
       .nav-header {
-        background: url('hero-enogen.jpg') center/cover no-repeat;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -85,28 +84,24 @@
       }
     }
   </style>
-  header {
-  background: url('hero-enogen.jpg') center/cover no-repeat;
-  height: 100vh;
-  width: 100%;
-}
-
 </head>
 <body>
   <nav>
-    <div class="nav-header">
-      <strong>EnoGen AI</strong>
-      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
-    </div>
-    <div class="nav-links" id="menu-links">
-      <a href="#about">About</a>
-      <a href="#technology">Technology</a>
-      <a href="#modules">Platform</a>
-      <a href="#business">Business</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-<header></header>
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <strong>EnoGen AI</strong>
+    <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+  </div>
+  <div id="menu-links" class="nav-links">
+    <a href="#about">About</a>
+    <a href="#technology">Technology</a>
+    <a href="#modules">Platform</a>
+    <a href="#business">Business</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header style="background: url('hero-enogen.jpg') center/cover no-repeat; height: 100vh; width: 100%;">
+</header>
   <main>
      <section id="about">
     <h2>About EnoGen AI</h2>
