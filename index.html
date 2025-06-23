@@ -72,7 +72,12 @@
       padding: 2rem;
       text-align: center;
     }
-  </style>
+      figure img:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+</style>
 </head>
 <body>
   <nav>
@@ -102,13 +107,18 @@
 
   <h3>Why Non-Saccharomyces Matter</h3>
   <p>While Saccharomyces cerevisiae eventually dominates fermentation, the <strong>first 48 hours</strong> are crucial. Non-Saccharomyces yeasts like <em>Torulaspora delbrueckii</em> or <em>Hanseniaspora</em> species introduce complex esters, thiols, and other volatile compounds that define sensory impact. Traditional winemaking often overlooks this delicate microbial window.</p>
-  <img src="non sacc_1.png" alt="Non-Saccharomyces Timeline 1" style="max-width:100%; margin:2rem auto; display:block;">
-  <img src="non sacc_2.png" alt="Non-Saccharomyces Timeline 2" style="max-width:100%; margin:2rem auto; display:block;">
+  <figure style="text-align:center; margin:2rem auto;">
+  <img src="non sacc_1.png" alt="Non-Saccharomyces Timeline 1" style="max-width:100%; border: 1px solid #ccc; border-radius: 8px;">
+  <figcaption style="font-size: 0.95rem; color: #444; margin-top: 0.5rem;">A – Evolution of microbial diversity in early fermentation (first 48h), showing the dominance of non-Saccharomyces strains before the rise of Saccharomyces sp.</figcaption>
+</figure>
+  <figure style="text-align:center; margin:2rem auto;">
+  <img src="non sacc_2.png" alt="Non-Saccharomyces Timeline 2" style="max-width:100%; border: 1px solid #ccc; border-radius: 8px;">
+  <figcaption style="font-size: 0.95rem; color: #444; margin-top: 0.5rem;">B – The contribution of non-Saccharomyces yeasts is time-limited but highly impactful. Their early activity shapes the wine’s aromatic and structural fingerprint.</figcaption>
+</figure>
 
   <h3>Precision Fermentation: A New Paradigm</h3>
   <p>EnoGenAI harnesses this knowledge by decoding the genetic and sensory potential of both grapes and yeasts. Through data fusion and AI modeling, we simulate fermentations to <strong>predict and optimize aromatic profiles</strong> — enabling consistency, personalization, and excellence across vintages.</p>
-  <img src="2cbe9861-d930-4d57-844e-139f2d1d2176.png" alt="Precision Fermentation Petals" style="max-width:100%; margin:2rem auto; display:block;">
-</section>
+
 
 <section id="technology">
   <h2>Technology</h2>
