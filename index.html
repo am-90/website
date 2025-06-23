@@ -5,63 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EnoGen AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f9f7f4;
-      color: #2b2b2b;
-      line-height: 1.6;
-    }
-    header {
-      background: url('hero-background.jpg') center/cover no-repeat;
-      color: #2b2b2b;
+  $1
+    .module-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
       text-align: center;
-      padding: 6rem 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
-    nav {
+      transition: 0.3s;
       background: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    nav a {
-      text-decoration: none;
-      color: #5e2c66;
-      margin: 0 1rem;
-      font-weight: 600;
+
+    .module-card:hover {
+      box-shadow: 0 0 15px rgba(94, 44, 102, 0.5);
+      transform: translateY(-5px);
     }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5e2c66;
-    }
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    footer {
-      background: #5e2c66;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
   <nav>
@@ -75,32 +32,81 @@
     </div>
   </nav>
 
-  <header>
-    <h1>EnoGen AI</h1>
-    <p>Our Science, your best wine</p>
-  </header>
+  <header></header>
 
   <section id="about">
-    <h2>About EnoGen AI</h2>
-    <p>EnoGen AI revolutionizes winemaking by combining artificial intelligence and genomics. Our platform ensures consistent aromatic profiles across vintages.</p>
-  </section>
+  <h2>About EnoGen AI</h2>
+  <p>EnoGenAI is the <strong>first biotech/AI platform</strong> that uses <strong>yeast genomics</strong>, <strong>Artificial Intelligence (AI)</strong>, and <strong>reverse engineering</strong> to design precision fermentation for wine. We enable producers to replicate and personalize sensory profiles through custom yeast mixtures derived from AI-based predictive models and genomics. We’ve developed a proprietary dataset and AI algorithms that power our platform, creating a defensible advantage at the intersection of science, data, and taste.</p>
+
+  <h3>The Problem: Unpredictable Winemaking</h3>
+  <p>Each wine vintage is a gamble. Environmental factors, vineyard conditions, and microbial dynamics can drastically alter the quality and character of wine from year to year. This inconsistency limits winemakers' ability to reliably reproduce successful aromatic profiles and brand-defining characteristics.</p>
+  <img src="barolo.png" alt="Barolo Vintage Ratings" style="max-width:100%; margin:2rem auto; display:block;">
+
+  <h3>The Wine Microbiome: An Untapped Frontier</h3>
+  <p>At the heart of wine character lies an invisible ecosystem — the wine microbiome. Composed of hundreds of microbial strains, the early stages of fermentation (0–48h) are dominated by a rich population of <strong>non-Saccharomyces yeasts</strong>, which contribute significantly to a wine’s aroma, structure, and mouthfeel.</p>
+  <img src="microbiome.png" alt="Microbiome Components" style="max-width:100%; margin:2rem auto; display:block;">
+
+  <h3>Why Non-Saccharomyces Matter</h3>
+  <p>While <strong style="font-size: 1rem;">Saccharomyces cerevisiae</strong> eventually dominates fermentation, the <strong style="font-size: 1rem;">first 48 hours</strong> are crucial. Non-Saccharomyces yeasts like <em>Torulaspora delbrueckii</em> or <em>Hanseniaspora</em> species introduce complex esters, thiols, and other volatile compounds that define sensory impact. Traditional winemaking often overlooks this delicate microbial window.</p>
+  <figure style="text-align:center; margin:2rem auto;">
+  <img src="non sacc_1.png" alt="Non-Saccharomyces Timeline 1" style="max-width:100%; border: 1px solid #ccc; border-radius: 8px; cursor: pointer;" title="Click to explore microbial evolution in the first 48h of fermentation">
+  <figcaption style="font-size: 0.95rem; color: #444; margin-top: 0.5rem;">A – Evolution of microbial diversity in early fermentation (first 48h), showing the dominance of non-Saccharomyces strains before the rise of Saccharomyces sp.</figcaption>
+</figure>
+  <figure style="text-align:center; margin:2rem auto;">
+  <img src="non sacc_2.png" alt="Non-Saccharomyces Timeline 2" style="max-width:75%; border: 1px solid #ccc; border-radius: 8px; cursor: pointer;" title="Non-Saccharomyces strains shape aroma during early fermentation">
+  <figcaption style="font-size: 0.95rem; color: #444; margin-top: 0.5rem;">B – The contribution of non-Saccharomyces yeasts is time-limited but highly impactful. Their early activity shapes the wine’s aromatic and structural fingerprint.</figcaption>
+</figure>
+
+  <h3>Precision Fermentation: A New Paradigm</h3>
+  <p>EnoGenAI harnesses this knowledge by decoding the genetic and sensory potential of both grapes and yeasts. Through data fusion and AI modeling, we simulate fermentations to <strong>predict and optimize aromatic profiles</strong> — enabling consistency, personalization, and excellence across vintages.</p>
+
 
   <section id="technology">
-    <h2>Technology</h2>
-    <p>Using genomic data, reverse engineering and AI models, we map and predict wine fermentation outcomes to achieve precision fermentation.</p>
-  </section>
+  <h2>Technology</h2>
+  <h3>The Vision behind EnoGen AI</h3>
+  <p>A scientific platform that combines genomic analysis, reverse engineering, and AI modeling.</p>
+  <img src="vision.png" alt="EnoGen Vision Pyramid" style="display:block; margin:2rem auto; max-width:100%;">
+  <h4>The Science Behind EnoGen AI</h4>
+  <p>EnoGen AI integrates cutting-edge science across multiple domains:</p>
+  <ul>
+    <li><strong>Genomic and Sensory Decoding</strong>: By sequencing the DNA of grape must and yeast strains, EnoGen AI identifies the microbiological composition of fermentation. Simultaneously, a Natural Language Processing (NLP) engine translates sensory descriptors (e.g., "velvety texture", "floral bouquet") into quantifiable data points.</li>
+    <li><strong>Multilayered Data Integration</strong>: Genetic, environmental, and sensory data are fused using advanced data fusion strategies. This enables personalized fermentation recommendations tailored to both raw materials and desired aromatic outcomes.</li>
+    <li><strong>Reverse Engineering and Predictive Fermentation Modeling</strong>: EnoGen AI's algorithms reconstruct ideal yeast blends for a given profile and simulate the fermentation process to predict the resulting aroma and flavor. This allows winemakers to test microbial strategies before they are applied in the cellar.</li>
+  </ul>
+  <p>The result is a new paradigm of <strong>precision fermentation</strong>—one where winemaking becomes replicable, predictive, and guided by genomic insight rather than tradition alone.</p>
+  <img src="science.png" alt="EnoGen AI Science Flow" style="display:block; margin:2rem auto; max-width:80%;">
+</section>
 
-  <section id="modules">
-    <h2>Our Platform</h2>
-    <div class="grid">
-      <div><strong>TANNINO</strong><p>Extracts organoleptic data from user input.</p></div>
-      <div><strong>YEAST</strong><p>Determines yeast blends from genomic profiles.</p></div>
-      <div><strong>SENSORIAL</strong><p>Customizes blends based on sensory goals.</p></div>
-      <div><strong>FERMENTUM</strong><p>Simulates fermentation to predict wine aroma.</p></div>
+    <section id="modules">
+  <h2>EnoGen AI Ecosystem</h2>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 2rem;">
+    <div style="font-size: 1.5rem; font-weight: bold; color: #5e2c66;">EnoGen AI</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 900px;">
+      <div class="module-card">
+        <img src="tannino_logo_2.png" alt="Tannino Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">TANNINO</h3>
+        <p style="font-size: 0.95rem; color: #333;">Blend personalization from sensory descriptors</p>
+      </div>
+      <div class="module-card">
+        <img src="logo_yeast_chiaro.png" alt="Yeast Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">YEAST</h3>
+        <p style="font-size: 0.95rem; color: #333;">Genome-based design of yeast mixtures</p>
+      </div>
+      <div class="module-card">
+        <img src="Logo_Sensorial.png" alt="Sensorial Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">SENSORIAL</h3>
+        <p style="font-size: 0.95rem; color: #333;">AI-based text-to-sensorial interpretation</p>
+      </div>
+      <div class="module-card">
+        <img src="Logo fermentum.png" alt="Fermentum Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">FERMENTUM</h3>
+        <p style="font-size: 0.95rem; color: #333;">Multi-strain fermentation simulation</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="business">
+    <section id="business"style="max-width: 1100px; margin: 0 auto;">
     <h2>Business Solutions</h2>
     <ul>
       <li>Genetic Analysis and Reverse Engineering</li>
@@ -110,7 +116,7 @@
     </ul>
   </section>
 
-  <section id="contact">
+    <section id="contact"style="max-width: 1100px; margin: 0 auto;">
     <h2>Contact Us</h2>
     <p>Email: enogenai@gmail.com<br>Phone: +39 3466608788<br>Location: L’Aquila, Italy</p>
   </section>
