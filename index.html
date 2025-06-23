@@ -14,18 +14,20 @@
       line-height: 1.6;
     }
     header {
-      background: url('hero-background.jpg') center/cover no-repeat;
-      color: #2b2b2b;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-enogen.jpg') center/cover no-repeat;
+      color: white;
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 8rem 2rem 6rem;
+      position: relative;
     }
     header img.logo {
-      width: 250px;
-      margin-bottom: 0.5rem;
+      width: 160px;
+      margin-bottom: 1rem;
     }
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
     }
     header p {
       font-size: 1.5rem;
@@ -37,6 +39,9 @@
       display: flex;
       justify-content: space-between;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
@@ -70,6 +75,7 @@
     .module-card strong {
       display: block;
       font-size: 1.2rem;
+      font-weight: bold;
       margin-bottom: 0.5rem;
     }
     footer {
@@ -100,7 +106,7 @@
 
   <section id="about">
     <h2>About EnoGen AI</h2>
-    <p>EnoGenAI is the first biotech/AI platform that uses yeast genomics, AI, and reverse engineering to design precision fermentation for wine. We enable producers to replicate and personalize sensory profiles through custom yeast mixtures derived from AI-based predictive models and genomics. 
+    <p>EnoGenAI is the <strong>first biotech/AI platform</strong> that uses <strong>yeast genomics</strong>, <strong>Artificial Intelligence (AI)</strong>, and <strong>reverse engineering</strong> to design precision fermentation for wine. We enable producers to replicate and personalize sensory profiles through custom yeast mixtures derived from AI-based predictive models and genomics. 
 We’ve developed a proprietary dataset and AI algorithms that power our platform, creating a defensible advantage at the intersection of science, data, and taste.</p>
   </section>
 
