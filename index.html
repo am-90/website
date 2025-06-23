@@ -19,6 +19,10 @@
       text-align: center;
       padding: 6rem 2rem;
     }
+    header img.logo {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
     header h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
@@ -55,6 +59,13 @@
       gap: 2rem;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+    .module-card {
+      text-align: center;
+    }
+    .module-card img {
+      width: 80px;
+      margin-bottom: 0.5rem;
+    }
     footer {
       background: #5e2c66;
       color: #fff;
@@ -76,6 +87,7 @@
   </nav>
 
   <header>
+    <img src="Logo FINAL OK.png" alt="EnoGen AI Logo" class="logo">
     <h1>EnoGen AI</h1>
     <p>Our Science, your best wine</p>
   </header>
@@ -93,10 +105,26 @@
   <section id="modules">
     <h2>Our Platform</h2>
     <div class="grid">
-      <div><strong>TANNINO</strong><p>Extracts organoleptic data from user input.</p></div>
-      <div><strong>YEAST</strong><p>Determines yeast blends from genomic profiles.</p></div>
-      <div><strong>SENSORIAL</strong><p>Customizes blends based on sensory goals.</p></div>
-      <div><strong>FERMENTUM</strong><p>Simulates fermentation to predict wine aroma.</p></div>
+      <div class="module-card">
+        <img src="tannino_logo_2.png" alt="Tannino Logo">
+        <strong>TANNINO</strong>
+        <p>Extracts organoleptic data from user input.</p>
+      </div>
+      <div class="module-card">
+        <img src="logo_yeast_chiaro.png" alt="Yeast Logo">
+        <strong>YEAST</strong>
+        <p>Determines yeast blends from genomic profiles.</p>
+      </div>
+      <div class="module-card">
+        <img src="Logo_Sensorial.png" alt="Sensorial Logo">
+        <strong>SENSORIAL</strong>
+        <p>Customizes blends based on sensory goals.</p>
+      </div>
+      <div class="module-card">
+        <img src="Logo fermentum.png" alt="Fermentum Logo">
+        <strong>FERMENTUM</strong>
+        <p>Simulates fermentation to predict wine aroma.</p>
+      </div>
     </div>
   </section>
 
