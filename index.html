@@ -5,82 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EnoGen AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f9f7f4;
-      color: #2b2b2b;
-      line-height: 1.6;
-    }
-    header {
-      background: url('hero-enogen.jpg') center/cover no-repeat;
-      height: 100vh;
-      width: 100%;
-    }
-    nav {
-      background: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      text-decoration: none;
-      color: #5e2c66;
-      margin: 0 1rem;
-      font-weight: 600;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: block;
-      text-align: left;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5e2c66;
-      text-align: left;
-    }
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+  $1
     .module-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
       text-align: center;
+      transition: 0.3s;
+      background: #fff;
     }
-    .module-card img {
-      width: 150px;
-      display: block;
-      margin: 0 auto 1rem;
+
+    .module-card:hover {
+      box-shadow: 0 0 15px rgba(94, 44, 102, 0.5);
+      transform: translateY(-5px);
     }
-    .module-card strong {
-      display: block;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      background: #5e2c66;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-      figure img:hover {
-      transform: scale(1.02);
-      transition: transform 0.3s ease;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-</style>
 </head>
 <body>
   <nav>
@@ -136,34 +74,37 @@
     <li><strong>Reverse Engineering and Predictive Fermentation Modeling</strong>: EnoGen AI's algorithms reconstruct ideal yeast blends for a given profile and simulate the fermentation process to predict the resulting aroma and flavor. This allows winemakers to test microbial strategies before they are applied in the cellar.</li>
   </ul>
   <p>The result is a new paradigm of <strong>precision fermentation</strong>—one where winemaking becomes replicable, predictive, and guided by genomic insight rather than tradition alone.</p>
-  <img src="science.png" alt="EnoGen AI Science Flow" style="display:block; margin:2rem auto; max-width:800%;">
+  <img src="science.png" alt="EnoGen AI Science Flow" style="display:block; margin:2rem auto; max-width:80%;">
 </section>
 
-    <section id="modules"style="max-width: 1100px; margin: 0 auto;">
-    <h2>AI-based Software Ecosystem</h2>
-    <div class="grid">
+    <section id="modules">
+  <h2>EnoGen AI Ecosystem</h2>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 2rem;">
+    <div style="font-size: 1.5rem; font-weight: bold; color: #5e2c66;">EnoGen AI</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 900px;">
       <div class="module-card">
-        <img src="tannino_logo_2.png" alt="Tannino Logo">
-        <strong>TANNINO</strong>
-        <p>Extracts organoleptic data from user input.</p>
+        <img src="tannino_logo_2.png" alt="Tannino Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">TANNINO</h3>
+        <p style="font-size: 0.95rem; color: #333;">Blend personalization from sensory descriptors</p>
       </div>
       <div class="module-card">
-        <img src="logo_yeast_chiaro.png" alt="Yeast Logo">
-        <strong>YEAST</strong>
-        <p>Determines yeast blends from genomic profiles.</p>
+        <img src="logo_yeast_chiaro.png" alt="Yeast Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">YEAST</h3>
+        <p style="font-size: 0.95rem; color: #333;">Genome-based design of yeast mixtures</p>
       </div>
       <div class="module-card">
-        <img src="Logo_Sensorial.png" alt="Sensorial Logo">
-        <strong>SENSORIAL</strong>
-        <p>Customizes blends based on sensory goals.</p>
+        <img src="Logo_Sensorial.png" alt="Sensorial Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">SENSORIAL</h3>
+        <p style="font-size: 0.95rem; color: #333;">AI-based text-to-sensorial interpretation</p>
       </div>
       <div class="module-card">
-        <img src="Logo fermentum.png" alt="Fermentum Logo">
-        <strong>FERMENTUM</strong>
-        <p>Simulates fermentation to predict wine aroma.</p>
+        <img src="Logo fermentum.png" alt="Fermentum Logo" style="width: 80px; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0.5rem 0; color: #5e2c66;">FERMENTUM</h3>
+        <p style="font-size: 0.95rem; color: #333;">Multi-strain fermentation simulation</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
     <section id="business"style="max-width: 1100px; margin: 0 auto;">
     <h2>Business Solutions</h2>
