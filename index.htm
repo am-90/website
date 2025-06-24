@@ -87,8 +87,12 @@ footer {
 #menu-toggle {
   display: none;
 }
-    
+        
 @media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   header {
     background-position: top center;
     background-size: contain;
@@ -96,14 +100,6 @@ footer {
     height: 60vh; /* opzionale: riduce altezza su mobile */
     margin-bottom: 0; /* elimina spazio sotto header */
   }
-}
-    
-@media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .nav-links {
     display: none;
     flex-direction: column;
