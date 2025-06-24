@@ -87,18 +87,26 @@ footer {
 #menu-toggle {
   display: none;
 }
-        
+
+
+
+
 @media screen and (max-width: 768px) {
   nav {
     flex-direction: column;
     align-items: flex-start;
   }
+
   header {
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 55vh;
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
   }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -125,7 +133,31 @@ footer {
     color: #5e2c66;
     align-self: flex-end;
   }
+
+  section {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  section:first-of-type {
+    margin-top: -1rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  .module-card img {
+    width: 140px !important;
+  }
+
+  .module-card p {
+    font-size: 0.9rem;
+  }
 }
+
+
+
 </style>
 </head>
 <body>
@@ -143,9 +175,9 @@ footer {
     <a href="#contact">Contact</a>
   </div>
 </nav>
-  
-<header><header><header>
-    
+
+
+  <header></header>
   <section id="about">
     <h2>About EnoGen AI</h2>
     <p>EnoGenAI is the <strong>first biotech/AI platform</strong> that uses <strong>yeast genomics</strong>, <strong>Artificial Intelligence (AI)</strong>, and <strong>reverse engineering</strong> to design precision fermentation for wine. We enable producers to replicate and personalize sensory profiles through custom yeast mixtures derived from AI-based predictive models and genomics. We’ve developed a proprietary dataset and AI algorithms that power our platform, creating a defensible advantage at the intersection of science, data, and taste.</p>
