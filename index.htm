@@ -161,6 +161,20 @@ section h2 {
   color: #5e2c66;
 }
 
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: center;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -190,19 +204,20 @@ section h2 {
     <img src="barolo.png" alt="Barolo Vintage Ratings" style="max-width:100%; margin:2rem auto; display:block;">
 
     <h3>The Wine Microbiome: An Untapped Frontier</h3>
-    <p>At the core of every wine's identity lies a complex, invisible ecosystem known as the wine microbiome. This microbial community, composed of bacteria, yeasts, and fungi, thrives on grape skins, in the cellar environment, and throughout the fermentation process. While much of traditional winemaking has centered on the inoculation or spontaneous dominance of Saccharomyces cerevisiae, recent studies have highlighted the pivotal role of non-Saccharomyces species in the early stages of fermentation—particularly during the first 48 hours. This initial window, often underestimated, is a period of high microbial diversity and intense biochemical activity. During this phase, yeasts such as Hanseniaspora, Torulaspora, Lachancea, and Metschnikowia metabolize grape-derived sugars and amino acids, releasing a vast array of secondary metabolites including esters, higher alcohols, volatile thiols, and other aromatic precursors. These compounds lay the foundation for the wine’s aromatic complexity, texture, and structural balance long before Saccharomyces takes over and drives the alcoholic fermentation to completion. However, due to their low alcohol tolerance, non-Saccharomyces yeasts are often outcompeted and disappear after the initial stages, rendering their contributions transient but critically influential. Modern metagenomics and next-generation sequencing have made it possible to map and quantify these microbial players, revealing how the composition of the early microbiome directly correlates with sensory outcomes in the final wine. Understanding and manipulating this microbial succession opens a powerful new dimension for precision enology—transforming the fermentation process from a largely empirical art into a controllable, data-driven ecosystem. By targeting the wine microbiome as a design variable rather than a passive background, winemakers gain the ability to unlock new styles, enhance consistency, and express terroir with unprecedented fidelity.</p>
+    <p>At the core of every wine's identity lies a complex, <strong>invisible ecosystem</strong> known as the <strong>wine microbiome</strong>. This microbial community, composed of bacteria, yeasts, and fungi, thrives on grape skins, in the cellar environment, and throughout the fermentation process. While much of traditional winemaking has centered on the inoculation or spontaneous dominance of Saccharomyces cerevisiae, recent studies have highlighted the pivotal role of <strong>non-Saccharomyces species</strong> in the early stages of fermentation—particularly during the first 48 hours. This initial window, often underestimated, is a period of high <strong>microbial diversity</strong> and intense biochemical activity. During this phase, yeasts such as Hanseniaspora, Torulaspora, Lachancea, and Metschnikowia metabolize grape-derived sugars and amino acids, releasing a vast array of secondary metabolites including esters, higher alcohols, volatile thiols, and other aromatic precursors. These compounds lay the foundation for the wine’s <strong>aromatic complexity</strong>, texture, and structural balance long before Saccharomyces takes over and drives the alcoholic fermentation to completion. However, due to their low alcohol tolerance, non-Saccharomyces yeasts are often outcompeted and disappear after the initial stages, rendering their contributions transient but critically influential. Modern <strong>metagenomics</strong> and <strong>next-generation sequencing</strong> have made it possible to map and quantify these microbial players, revealing how the composition of the early microbiome directly correlates with <strong>sensory outcomes</strong> in the final wine. Understanding and manipulating this microbial succession opens a powerful new dimension for <strong>precision enology</strong>—transforming the fermentation process from a largely empirical art into a controllable, <strong>data-driven ecosystem</strong>. By targeting the <strong>wine microbiome</strong> as a <strong>design variable</strong> rather than a passive background, winemakers gain the ability to unlock new styles, enhance consistency, and express <strong>terroir</strong> with unprecedented fidelity.</p>
     <img src="microbiome.png" alt="Microbiome Components" style="max-width:100%; margin:2rem auto; display:block;">
 
     <h3>Why Non-Saccharomyces Matter</h3>
     <p>While <strong style="font-size: 1rem;">Saccharomyces cerevisiae</strong> eventually dominates fermentation, the <strong style="font-size: 1rem;">first 48 hours</strong> are crucial. Non-Saccharomyces yeasts like <em>Torulaspora delbrueckii</em> or <em>Hanseniaspora</em> species introduce complex esters, thiols, and other volatile compounds that define sensory impact. Traditional winemaking often overlooks this delicate microbial window.The composition of the first 2 days of fermentation microbiome strongly influences  the wine character. After 3 days of fermentation only alcohol resistant Saccharomyces represent more than 99% of all wine's microbiome </p>
 
-    <figure style="text-align:center; margin:2rem auto;">
-      <img src="non sacc_1.png" alt="Non-Saccharomyces Timeline 1" style="max-width:70%; margin:2rem auto; display:block;>
-      <figcaption style="font-size: 0.95rem; color: #444; margin-top: 0.5rem;">
-          Evolution of microbial diversity in early fermentation (first 48h), showing the dominance of non-Saccharomyces strains before the rise of Saccharomyces sp.The contribution of non-Saccharomyces yeasts is time-limited but highly impactful. Their early activity shapes the wine’s aromatic and structural fingerprint.
-
-      </figcaption>
-    </figure>
+    
+<div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin: 2rem auto; max-width: 1000px;">
+  <img src="non sacc_1.png" alt="Non-Saccharomyces Timeline 1" style="max-width: 50%;">
+  <div style="max-width: 50%; font-style: italic; text-align: justify; font-size: 0.95rem; color: #444;">
+    Evolution of <strong>microbial diversity</strong> in early fermentation (first 48h), showing the dominance of non-Saccharomyces strains before the rise of Saccharomyces sp. The contribution of non-Saccharomyces yeasts is time-limited but highly impactful. Their early activity shapes the wine’s aromatic and structural fingerprint.
+  </div>
+</div>
+ 
   </section>
   <section id="technology" class="section section-dark">
     <h2>Technology</h2>
@@ -220,6 +235,7 @@ section h2 {
     </ul>
     <p>The result is a new paradigm of <strong>precision fermentation</strong> — one where winemaking becomes replicable, predictive, and guided by genomic insight rather than tradition alone.</p>
     <img src="science.png" alt="EnoGen AI Science Flow" style="display:block; margin:2rem auto; max-width:90%;">
+<p style="text-align:center; font-style:italic; margin-top: 1rem;">Where data meets nature to shape the future of wine.</p>
   </section>
   <section id="modules" class="section section-light">
     <h2>AI-based Software Ecosystem</h2>
@@ -264,7 +280,7 @@ section h2 {
   <h3>Products and Services</h3>
   <p>Thanks to our technology, we offer wineries, wine shops and food companies the opportunity to create a truly unique and customizable wine experience, tailored to their specific needs.</p>
  
-  <img src="business.png" alt="Business Services" style="display:block; max-width:110%; margin:2rem auto;">
+  <img src="business.png" alt="Business Services" style="display:block; max-width:90%; margin:2rem auto; text-align:center;">
   <h3>Product Differentation</h3>
   <p>EnoGen AI differentiates itself from the competition through its unique integration of biotechnology, artificial intelligence, and precision fermentation. Unlike traditional wine tech companies that focus solely on production monitoring or fermentation control, EnoGen leverages genomic sequencing and advanced AI algorithms to actively decode, model, and design the microbiome of wine fermentation. This allows us to move beyond descriptive analytics into predictive and generative modeling—enabling winemakers to simulate fermentation outcomes, optimize yeast blends, and reverse-engineer desired sensory profiles. Our proprietary datasets, AI-driven sensory decoding, and customizable yeast biobanking provide a level of personalization and reproducibility that current market solutions cannot match. By transforming fermentation into a programmable, data-driven process, EnoGen empowers producers to elevate wine consistency, creativity, and quality in ways that are scientifically validated and commercially scalable.</p>
   
@@ -274,7 +290,7 @@ section h2 {
 
   <section id="contact" class="section section-light" style="max-width: 1100px; margin: 0 auto;">
     <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/xzzgjljp" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px;">
+    <form action="https://formspree.io/f/xzzgjljp" style="margin: 0 auto;" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px;">
       <input type="text" name="first_name" placeholder="First Name" required style="padding: 0.75rem; border-radius: 4px; border: 1px solid #ccc;">
       <input type="text" name="last_name" placeholder="Last Name" required style="padding: 0.75rem; border-radius: 4px; border: 1px solid #ccc;">
       <input type="email" name="email" placeholder="Email" required style="padding: 0.75rem; border-radius: 4px; border: 1px solid #ccc;">
@@ -283,6 +299,7 @@ section h2 {
     </form>
   </section>
   <footer>
+  <img src="Logo FINAL OK.png" alt="EnoGen Logo" style="width: 120px; display:block; margin: 1rem auto;">
     <p>Contact: <a href="mailto:enogenai@gmail.com" style="color: #fff;">enogenai@gmail.com</a> | Phone: +39 3466608788 | Location: L’Aquila, Italy</p>
     <br>
     <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
