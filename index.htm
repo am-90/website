@@ -6,190 +6,107 @@
   <title>EnoGen AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-/* Global layout */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: #f9f7f4;
-  color: #2b2b2b;
-  line-height: 1.6;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f7f4;
+      color: #2b2b2b;
+    }
 
-nav {
-  background: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
 
-.brand {
-  font-weight: 800;
-  color: #5e2c66;
-  font-size: 1.2rem;
-   align-items:Left;
-}
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  margin-left: auto;
-}
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: #5e2c66;
-  font-weight: 600;
-}
+    .brand {
+      font-weight: 800;
+      color: #5e2c66;
+      font-size: 1.2rem;
+    }
 
-header {
-  background: url('hero-enogen.jpg') center/cover no-repeat;
-  height: 100vh;
-  width: 100%;
-}
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
 
-section {
-  padding: 4rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: justify;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: #5e2c66;
+      font-weight: 600;
+    }
 
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #5e2c66;
-}
+    #menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #5e2c66;
+    }
 
-footer {
-  background: #5e2c66;
-  color: #fff;
-  padding: 2rem;
-  text-align: center;
-}
+    @media screen and (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-.module-card {
-  padding: 1rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
 
-.module-card h3 {
-  margin: 0.5rem 0;
-  color: #5e2c66;
-}
+      .nav-links.show {
+        display: flex;
+      }
 
-.module-card p {
-  font-size: 0.95rem;
-  color: #333;
-}
+      .nav-links a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0;
+        text-align: left;
+      }
 
-/* Mobile nav toggle */
-#menu-toggle {
-  display: none;
-}
+      #menu-toggle {
+        display: block;
+        align-self: flex-end;
+      }
+    }
 
-
-
-
-@media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header {
-    background-position: top center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 55vh;
-    margin: 0;
-    padding: 0;
-    border-bottom: none;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    text-align: left;
-  }
-
-  #menu-toggle {
-    display: block;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5e2c66;
-    align-self: flex-end;
-  }
-
-  section {
-    padding-top: 0;
-    margin-top: 0;
-  }
-
-  section:first-of-type {
-    margin-top: -1rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-  }
-
-  .module-card img {
-    width: 120px !important;
-  }
-
-  .module-card p {
-    font-size: 0.9rem;
-  }
-}
-
-
-
-</style>
+    header {
+      background: url('hero-enogen.jpg') center/cover no-repeat;
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  
-<nav>
-  <div class="nav-container">
-    <strong class="brand">EnoGen AI</strong>
-    <div class="nav-links" id="menu-links">
-      <a href="#about">About</a>
-      <a href="#technology">Technology</a>
-      <a href="#modules">Platform</a>
-      <a href="#business">Business</a>
-      <a href="#contact">Contact</a>
+  <nav>
+    <div class="nav-container">
+      <strong class="brand">EnoGen AI</strong>
+      <div class="nav-links" id="menu-links">
+        <a href="#about">About</a>
+        <a href="#technology">Technology</a>
+        <a href="#modules">Platform</a>
+        <a href="#business">Business</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
     </div>
-    <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
-  </div>
-</nav>
-
+  </nav>
 
   <header></header>
   <section id="about">
