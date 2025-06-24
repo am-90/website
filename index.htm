@@ -6,88 +6,87 @@
   <title>EnoGen AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-  
-  .nav-links {
+/* Global layout */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f9f7f4;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+nav {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
   display: flex;
   gap: 1rem;
   margin-left: auto;
-  }
-  
-  #menu-toggle {
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5e2c66;
+  font-weight: 600;
+}
+
+header {
+  background: url('hero-enogen.jpg') center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+footer {
+  background: #5e2c66;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.module-card {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.module-card h3 {
+  margin: 0.5rem 0;
+  color: #5e2c66;
+}
+
+.module-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Mobile nav toggle */
+#menu-toggle {
   display: none;
-  }
-  
-   html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f9f7f4;
-      color: #2b2b2b;
-      line-height: 1.6;
-    }
-    nav {
-      background: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      text-decoration: none;
-      color: #5e2c66;
-      margin: 0 1rem;
-      font-weight: 600;
-    }
-    header {
-      background: url('hero-enogen.jpg') center/cover no-repeat;
-      height: 100vh;
-      width: 100%;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: justify;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5e2c66;
-    }
-    footer {
-      background: #5e2c66;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-    figure img:hover {
-      transform: scale(1.02);
-      transition: transform 0.3s ease;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-    .module-card {
-      padding: 1rem;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-    .module-card h3 {
-      margin: 0.5rem 0;
-      color: #5e2c66;
-    }
-    .module-card p {
-      font-size: 0.95rem;
-      color: #333;
-      
-
-
-
+}
 
 @media screen and (max-width: 768px) {
   nav {
@@ -249,6 +248,16 @@
     <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
   </footer>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('menu-links');
+    toggle.addEventListener('click', function() {
+      links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+    });
+  });
+</script>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -259,7 +268,6 @@
     });
   });
 </script>
-
 
 </body>
 </html>
