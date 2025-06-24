@@ -6,6 +6,9 @@
   <title>EnoGen AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+   html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -127,7 +130,31 @@ footer {
   font-size: 0.95rem;
   color: #333;
 }
-  </style>
+  
+.section-light {
+  background-color: #f9f7f4;
+}
+
+.section-dark {
+  background-color: #ece9e4;
+}
+
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+  transition: background-color 0.3s ease-in-out;
+  border-top: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+</style>
 </head>
 <body>
   <nav>
@@ -145,7 +172,7 @@ footer {
   </nav>
 
   <header></header>
-  <section id="about">
+  <section id="about" class="section section-light">
     <h2>About EnoGen AI</h2>
     <p>EnoGenAI is the <strong>first biotech/AI platform</strong> that uses <strong>yeast genomics</strong>, <strong>Artificial Intelligence (AI)</strong>, and <strong>reverse engineering</strong> to design precision fermentation for wine. We enable producers to replicate and personalize sensory profiles through custom yeast mixtures derived from AI-based predictive models and genomics. We’ve developed a proprietary dataset and AI algorithms that power our platform, creating a defensible advantage at the intersection of science, data, and taste.</p>
 
@@ -177,7 +204,7 @@ footer {
     <h3>Precision Fermentation: A New Paradigm</h3>
     <p>EnoGenAI harnesses this knowledge by decoding the genetic and sensory potential of both grapes and yeasts. Through data fusion and AI modeling, we simulate fermentations to <strong>predict and optimize aromatic profiles</strong> — enabling consistency, personalization, and excellence across vintages.</p>
   </section>
-  <section id="technology">
+  <section id="technology" class="section section-dark">
     <h2>Technology</h2>
 
     <h3>The Vision behind EnoGen AI</h3>
@@ -194,7 +221,7 @@ footer {
     <p>The result is a new paradigm of <strong>precision fermentation</strong> — one where winemaking becomes replicable, predictive, and guided by genomic insight rather than tradition alone.</p>
     <img src="science.png" alt="EnoGen AI Science Flow" style="display:block; margin:2rem auto; max-width:60%;">
   </section>
-  <section id="modules">
+  <section id="modules" class="section section-light">
     <h2>AI-based Software Ecosystem</h2>
 
     <p style="max-width:900px; margin-bottom: 2rem;">
@@ -231,7 +258,7 @@ footer {
     </div>
   </section>
 
-  <section id="business" style="max-width: 1100px; margin: 0 auto;">
+  <section id="business" class="section section-dark" style="max-width: 1100px; margin: 0 auto;">
     <h2>Business Solutions</h2>
     <ul>
       <li>Genetic Analysis and Reverse Engineering</li>
@@ -240,7 +267,7 @@ footer {
       <li>Custom Yeast Biobanking</li>
     </ul>
   </section>
-  <section id="contact" style="max-width: 1100px; margin: 0 auto;">
+  <section id="contact" class="section section-light" style="max-width: 1100px; margin: 0 auto;">
     <h2>Contact Us</h2>
     <p>
       Email: <a href="mailto:enogenai@gmail.com">enogenai@gmail.com</a><br>
