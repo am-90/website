@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EnoGen AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9f7f4;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: #5e2c66;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #5e2c66;
+      font-weight: 600;
+    }
+
+    #menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #5e2c66;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0;
+        text-align: left;
+      }
+
+      #menu-toggle {
+        display: block;
+        align-self: flex-end;
+      }
+      .module-card img {
+        width: 120px !important;
+    }
+
+     .module-card p {
+       font-size: 0.9rem;
+    }
+}
+
+    header {
+      background: url('hero-enogen.jpg') center/cover no-repeat;
+      height: 100vh;
+      width: 100%;
+    }
+    section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+footer {
+  background: #5e2c66;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.module-card {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.module-card h3 {
+  margin: 0.5rem 0;
+  color: #5e2c66;
+}
+
+.module-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+  
+.section-light {
+  background-color: #f5efe6;
+}
+
+.section-dark {
+  background-color: #ece9e4;
+}
+
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+  transition: background-color 0.3s ease-in-out;
+  border-top: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: center;
+  }
+  .section img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .section div img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .section div div {
+    padding-top: 1rem;
+    font-size: 0.95rem;
+  }
+  .section div {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: justify;
+  }
+}
+
+      
+      
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <strong class="brand">EnoGen AI</strong>
+      <div class="nav-links" id="menu-links">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="technology.html">Technology</a>
+        <a href="platform.html">Platform</a>
+        <a href="business.html">Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </div>
+  </nav>
+<section id="technology" class="section section-dark">
+    <h2>Technology</h2>
+
+    <h3>The Vision behind EnoGen AI</h3>
+    <p>A scientific platform that combines genomic analysis, reverse engineering, and AI modeling.</p>
+    <img src="vision.png" alt="EnoGen Vision Pyramid" style="display:block; margin:2rem auto; max-width:100%;">
+
+    <h3>The Science Behind EnoGen AI</h3>
+    <p>EnoGen AI integrates cutting-edge science across multiple domains:</p>
+    <ul>
+      <li><strong>Genomic and Sensory Decoding</strong>: By sequencing the DNA of grape must and yeast strains, EnoGen AI identifies the microbiological composition of fermentation. Simultaneously, a Natural Language Processing (NLP) engine translates sensory descriptors (e.g., "velvety texture", "floral bouquet") into quantifiable data points.</li>
+      <li><strong>Multilayered Data Integration</strong>: Genetic, environmental, and sensory data are fused using advanced data fusion strategies. This enables personalized fermentation recommendations tailored to both raw materials and desired aromatic outcomes.</li>
+      <li><strong>Reverse Engineering and Predictive Fermentation Modeling</strong>: EnoGen AI's algorithms reconstruct ideal yeast blends for a given profile and simulate the fermentation process to predict the resulting aroma and flavor. This allows winemakers to test microbial strategies before they are applied in the cellar.</li>
+    </ul>
+    <p>The result is a new paradigm of <strong>precision fermentation</strong> — one where winemaking becomes replicable, predictive, and guided by genomic insight rather than tradition alone.</p>
+    <img src="science.png" alt="EnoGen AI Science Flow" style="display:block; margin:2rem auto; max-width:90%;">
+<p style="text-align:center; font-style:italic; margin-top: 1rem;">Where data meets nature to shape the future of wine.</p>
+  </section>
+  <footer>
+    <img src="Logo FINAL OK.png" alt="EnoGen Logo" style="width: 120px; display:block; margin: 1rem auto;">
+    <p>Contact: <a href="mailto:enogenai@gmail.com" style="color: #fff;">enogenai@gmail.com</a> | Phone: +39 3466608788 | Location: L’Aquila, Italy</p>
+    <br>
+    <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('menu-links');
+    toggle.addEventListener('click', function () {
+      links.classList.toggle('show');
+    });
+  });
+</script>
+</body>
+</html>
