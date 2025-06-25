@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EnoGen AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<style>
+html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9f7f4;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: #5e2c66;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #5e2c66;
+      font-weight: 600;
+    }
+
+    #menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #5e2c66;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0;
+        text-align: left;
+      }
+
+      #menu-toggle {
+        display: block;
+        align-self: flex-end;
+      }
+      .module-card img {
+        width: 120px !important;
+    }
+
+     .module-card p {
+       font-size: 0.9rem;
+    }
+}
+
+    header {
+      background: url('hero-enogen.jpg') center/cover no-repeat;
+      height: 100vh;
+      width: 100%;
+    }
+    section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+footer {
+  background: #5e2c66;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.module-card {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.module-card h3 {
+  margin: 0.5rem 0;
+  color: #5e2c66;
+}
+
+.module-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+  
+.section-light {
+  background-color: #f5efe6;
+}
+
+.section-dark {
+  background-color: #ece9e4;
+}
+
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+  transition: background-color 0.3s ease-in-out;
+  border-top: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: center;
+  }
+  .section img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .section div img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .section div div {
+    padding-top: 1rem;
+    font-size: 0.95rem;
+  }
+  .section div {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: justify;
+  }
+}
+
+    
+    
+    
+</style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <strong class="brand">EnoGen AI</strong>
+      <div class="nav-links" id="menu-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="technology.html">Technology</a>
+        <a href="platform.html">Platform</a>
+        <a href="business.html">Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </div>
+  </nav>
+<section id="about" class="section section-light">
+    <h2>About EnoGen AI</h2>
+    <p>EnoGenAI is the <strong>first biotech/AI platform</strong> that uses <strong>yeast genomics</strong>, <strong>Artificial Intelligence (AI)</strong>, and <strong>reverse engineering</strong> to design precision fermentation for wine. We enable producers to replicate and personalize sensory profiles through custom yeast mixtures derived from AI-based predictive models and genomics. We’ve developed a proprietary dataset and AI algorithms that power our platform, creating a defensible advantage at the intersection of science, data, and taste.</p>
+    
+    <h3>Precision Fermentation: A New Paradigm</h3>
+    <p>EnoGenAI harnesses this knowledge by decoding the genetic and sensory potential of both grapes and yeasts. Through data fusion and AI modeling, we simulate fermentations to <strong>predict and optimize aromatic profiles</strong> — enabling consistency, personalization, and excellence across vintages.</p>
+    <h3>The Problem: Unpredictable Winemaking</h3>
+    <p>Each wine vintage is a gamble. Environmental factors, vineyard conditions, and microbial dynamics can drastically alter the quality and character of wine from year to year. This inconsistency limits winemakers' ability to reliably reproduce successful aromatic profiles and brand-defining characteristics.</p>
+    <img src="barolo.png" alt="Barolo Vintage Ratings" style="max-width:100%; margin:2rem auto; display:block;">
+
+    <h3>The Wine Microbiome: An Untapped Frontier</h3>
+    <p>At the core of every wine's identity lies a complex, <strong>invisible ecosystem</strong> known as the <strong>wine microbiome</strong>. This microbial community, composed of bacteria, yeasts, and fungi, thrives on grape skins, in the cellar environment, and throughout the fermentation process. While much of traditional winemaking has centered on the inoculation or spontaneous dominance of Saccharomyces cerevisiae, recent studies have highlighted the pivotal role of <strong>non-Saccharomyces species</strong> in the early stages of fermentation—particularly during the first 48 hours. This initial window, often underestimated, is a period of high <strong>microbial diversity</strong> and intense biochemical activity. During this phase, yeasts such as Hanseniaspora, Torulaspora, Lachancea, and Metschnikowia metabolize grape-derived sugars and amino acids, releasing a vast array of secondary metabolites including esters, higher alcohols, volatile thiols, and other aromatic precursors. These compounds lay the foundation for the wine’s <strong>aromatic complexity</strong>, texture, and structural balance long before Saccharomyces takes over and drives the alcoholic fermentation to completion. However, due to their low alcohol tolerance, non-Saccharomyces yeasts are often outcompeted and disappear after the initial stages, rendering their contributions transient but critically influential. Modern <strong>metagenomics</strong> and <strong>next-generation sequencing</strong> have made it possible to map and quantify these microbial players, revealing how the composition of the early microbiome directly correlates with <strong>sensory outcomes</strong> in the final wine. Understanding and manipulating this microbial succession opens a powerful new dimension for <strong>precision enology</strong>—transforming the fermentation process from a largely empirical art into a controllable, <strong>data-driven ecosystem</strong>. By targeting the <strong>wine microbiome</strong> as a <strong>design variable</strong> rather than a passive background, winemakers gain the ability to unlock new styles, enhance consistency, and express <strong>terroir</strong> with unprecedented fidelity.</p>
+    <img src="microbiome.png" alt="Microbiome Components" style="max-width:100%; margin:2rem auto; display:block;">
+
+    <h3>Why Non-Saccharomyces Matter</h3>
+    <p>While <strong style="font-size: 1rem;">Saccharomyces cerevisiae</strong> eventually dominates fermentation, the <strong style="font-size: 1rem;">first 48 hours</strong> are crucial. Non-Saccharomyces yeasts like <em>Torulaspora delbrueckii</em> or <em>Hanseniaspora</em> species introduce complex esters, thiols, and other volatile compounds that define sensory impact. Traditional winemaking often overlooks this delicate microbial window.The composition of the first 2 days of fermentation microbiome strongly influences  the wine character. After 3 days of fermentation only alcohol resistant Saccharomyces represent more than 99% of all wine's microbiome </p>
+
+    
+<div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin: 2rem auto; max-width: 1000px;">
+  <img src="non sacc_1.png" alt="Non-Saccharomyces Timeline 1" style="max-width: 50%;">
+  <div style="max-width: 50%; font-style: italic; text-align: justify; font-size: 0.95rem; color: #444;">
+    Evolution of <strong>microbial diversity</strong> in early fermentation (first 48h), showing the dominance of non-Saccharomyces strains before the rise of Saccharomyces sp. The contribution of non-Saccharomyces yeasts is time-limited but highly impactful. Their early activity shapes the wine’s aromatic and structural fingerprint.
+  </div>
+</div>
+
+  </section>
+  <footer>
+    <img src="Logo FINAL OK.png" alt="EnoGen Logo" style="width: 120px; display:block; margin: 1rem auto;">
+    <p>Contact: <a href="mailto:enogenai@gmail.com" style="color: #fff;">enogenai@gmail.com</a> | Phone: +39 3466608788 | Location: L’Aquila, Italy</p>
+    <br>
+    <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('menu-links');
+    toggle.addEventListener('click', function () {
+      links.classList.toggle('show');
+    });
+  });
+</script>
+</body>
+</html>
