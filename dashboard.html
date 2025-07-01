@@ -43,10 +43,19 @@
   }
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
-  document.getElementById('logout').onclick = () =>
-  auth0.logout({
-   logoutParams: {
-    returnTo: window.location.origin + '/login.html'
+   
+  // *** LOGOUT BUTTON FIX ***
+  const btn = document.getElementById('logout');
+  btn.addEventListener('click', () => {
+    // costruisci URL di logout Auth0
+    const returnTo = encodeURIComponent(window.location.origin + '/login');
+    const logoutUrl = 
+      `https://${cfg.domain}/v2/logout` +
+      `?client_id=${cfg.clientId}` +
+      `&returnTo=${returnTo}`;
+    // redirect per invalidare la sessione
+    window.location.href = logoutUrl;
+  });
 })();
 </script>
 
