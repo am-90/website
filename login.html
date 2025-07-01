@@ -1,156 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="kIShwJAQwgbosC6vYOx8HzUkcHX1LorZ8YaqeGDBUuw" />
   <title>Login – EnoGen AI</title>
-   <!-- Basic SEO -->
-  <meta name="description" content="EnoGen AI is the first biotech/AI platform for precision wine fermentation using yeast genomics, sensory decoding, and artificial intelligence.">
-  <meta name="keywords" content="wine technology, artificial intelligence, yeast genomics, precision fermentation, enology, winemaking, EnoGen AI, AI wine platform, fermentation software">
-  <meta name="author" content="EnoGen AI">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="EnoGen AI – Precision Fermentation Platform" />
-  <meta property="og:description" content="A cutting-edge AI platform that decodes and engineers the wine microbiome through genomics, sensory data, and predictive fermentation models." />
-  <meta property="og:image" content="https://enogenai.com/hero-enogen.jpg" />
-  <meta property="og:url" content="https://enogenai.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EnoGen AI – Wine Meets Artificial Intelligence" />
-  <meta name="twitter:description" content="Discover the future of winemaking through AI, genomics, and microbiome-driven fermentation." />
-  <meta name="twitter:image" content="https://enogenai.com/hero-enogen.jpg" />
+  <!-- Basic SEO -->
+  <meta name="description" content="EnoGen AI member login page." />
+  <meta name="keywords" content="EnoGen AI, login, authentication, biotech, AI" />
+  <meta name="author" content="EnoGen AI" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- Auth0 configuration must be loaded before initialization -->
+  <script src="auth0-config.js"></script>
   <!-- Auth0 Lock library -->
   <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
-  <script src="auth0-config.js"></script>
   <style>
-  /* Global */
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f9f7f4;
-    color: #2b2b2b;
-    line-height: 1.6;
-  }
-
-  /* Navbar */
-  nav {
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .brand {
-    font-weight: 800;
-    color: #5e2c66;
-    font-size: 1.2rem;
-    font-family: 'Inter', sans-serif;
-  }
-  #menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5e2c66;
-  }
-
-  /* Mobile nav */
-  @media screen and (max-width: 768px) {
+    /* Global */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9f7f4;
+      color: #2b2b2b;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Navbar */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .brand {
+      font-weight: 800;
+      color: #5e2c66;
+      font-size: 1.2rem;
     }
     .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 1rem;
-    }
-    .nav-links.show {
       display: flex;
+      gap: 1.2rem;
     }
     .nav-links a {
-      margin: 0.5rem 0;
-      padding: 0.5rem 0;
-      text-align: left;
+      text-decoration: none;
+      color: #5e2c66;
+      font-weight: 600;
     }
     #menu-toggle {
-      display: block;
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #5e2c66;
     }
-    header {
-      height: 60vh !important;
-      background-position: center center !important;
+    @media screen and (max-width: 768px) {
+      .nav-container { flex-direction: row; justify-content: space-between; align-items: center; }
+      .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 1rem; }
+      .nav-links.show { display: flex; }
+      .nav-links a { margin: 0.5rem 0; padding: 0.5rem 0; text-align: left; }
+      #menu-toggle { display: block; }
     }
-  }
-
-  /* Login card */
-  main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  .login-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    max-width: 360px;
-    width: 100%;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-  }
-  #auth0-lock-container {
-    margin-top: 1rem;
-  }
-
-  /* Footer */
-  footer {
-    background: #5e2c66;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-  }
-</style>
-
+    /* Login card */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .login-card {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    #auth0-lock-container { margin-top: 1rem; }
+    /* Footer */
+    footer {
+      background: #5e2c66;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <nav>
-    <strong style="font-family:'Inter',sans-serif; color:#5e2c66; font-size:1.2rem;">EnoGen AI</strong>
+    <div class="nav-container">
+      <strong class="brand">EnoGen AI</strong>
+      <div class="nav-links" id="menu-links">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="technology.html">Technology</a>
+        <a href="platform.html">Platform</a>
+        <a href="business.html">Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </div>
   </nav>
+
   <main>
     <div class="login-card">
-      <h2 style="color:#5e2c66; margin-bottom:0.5rem;">Member Login</h2>
+      <h2 style="color:#5e2c66; margin-bottom:1rem;">Member Login</h2>
       <div id="auth0-lock-container"></div>
     </div>
   </main>
-  <footer>&copy; 2025 EnoGen AI</footer>
+
+  <footer>
+    <img src="Logo FINAL OK.png" alt="EnoGen Logo" style="width:120px; margin:0 auto 1rem; display:block;">
+    <p>Contact: <a href="mailto:enogenai@gmail.com" style="color:#fff;">enogenai@gmail.com</a> | Phone: +39 3466608788</p>
+    <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
+  </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('menu-toggle');
+      const links = document.getElementById('menu-links');
+      toggle.addEventListener('click', () => links.classList.toggle('show'));
+    });
+    // Auth0 Lock initialization after config load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.authConfig || !window.authConfig.clientId || !window.authConfig.domain) {
+        console.error('authConfig is missing. Please ensure auth0-config.js is loaded correctly.');
+        return;
+      }
       const cfg = window.authConfig;
       const lock = new Auth0Lock(cfg.clientId, cfg.domain, {
         container: 'auth0-lock-container',
@@ -162,7 +155,8 @@
         },
         theme: { primaryColor: '#5e2c66' },
         languageDictionary: { title: 'Login to EnoGen AI' },
-        closable: false
+        closable: false,
+        gravatar: false
       });
       lock.show();
     });
