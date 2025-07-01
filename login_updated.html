@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – EnoGen AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .login-card {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    #auth0-login-container {
+      margin-top: 1rem;
+    }
+    footer {
+      background: #5e2c66;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
+  <!-- Auth0 Lock -->
+  <script src="auth0-config.js"></script>
+  <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <strong class="brand">EnoGen AI</strong>
+      <div class="nav-links" id="menu-links">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="technology.html">Technology</a>
+        <a href="platform.html">Platform</a>
+        <a href="business.html">Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="login-card">
+      <h2 style="color:#5e2c66; margin-bottom: 0.5rem;">Member Area</h2>
+      <p style="margin-bottom:1.2rem;">Log in with your credentials to access TANNINO.</p>
+      <div id="auth0-login-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <img src="Logo FINAL OK.png" alt="EnoGen Logo" style="width: 120px; display:block; margin: 1rem auto;">
+    <p>Contact: <a href="mailto:enogenai@gmail.com" style="color: #fff;">enogenai@gmail.com</a> | Phone: +39 3466608788 | Location: L’Aquila, Italy</p>
+    <br>
+    <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('menu-links');
+    toggle.addEventListener('click', () => links.classList.toggle('show'));
+
+    const cfg = window.authConfig;
+    var lock = new Auth0Lock(cfg.clientId, cfg.domain, {
+      container: 'auth0-login-container',
+      auth: {
+        redirectUrl: window.location.origin + '/dashboard',
+        responseType: 'token id_token',
+        params: {
+          scope: 'openid profile email',
+          audience: cfg.audience
+        }
+      },
+      allowSignUp: false,
+      theme: {
+        primaryColor: '#5e2c66'
+      },
+      languageDictionary: {
+        title: 'Welcome'
+      },
+      closable: false
+    });
+
+    lock.show();
+  });
+</script>
+</body>
+</html>
