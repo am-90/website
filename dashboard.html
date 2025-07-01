@@ -291,10 +291,7 @@ section h2 {
 
     /* 3️⃣  verifica lo stato di autenticazione */
     const isAuthenticated = await auth0Client.isAuthenticated();
-    if (!isAuthenticated) {
-      /* se per qualche motivo non sei autenticato, torna al login */
-      return location.assign('/login');
-    }
+    if (!isAuthenticated) location.assign('/login');
 
     /* 4️⃣  utente autenticato: mostra nome o email */
     const user = await auth0Client.getUser();
