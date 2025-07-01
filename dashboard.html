@@ -1,12 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard – EnoGen AI</title>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-site-verification" content="kIShwJAQwgbosC6vYOx8HzUkcHX1LorZ8YaqeGDBUuw" />
+  <title>EnoGen AI</title>
+  <!-- Basic SEO -->
+  <meta name="description" content="EnoGen AI is the first biotech/AI platform for precision wine fermentation using yeast genomics, sensory decoding, and artificial intelligence.">
+  <meta name="keywords" content="wine technology, artificial intelligence, yeast genomics, precision fermentation, enology, winemaking, EnoGen AI, AI wine platform, fermentation software">
+  <meta name="author" content="EnoGen AI">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="EnoGen AI – Precision Fermentation Platform" />
+  <meta property="og:description" content="A cutting-edge AI platform that decodes and engineers the wine microbiome through genomics, sensory data, and predictive fermentation models." />
+  <meta property="og:image" content="https://enogenai.com/hero-enogen.jpg" />
+  <meta property="og:url" content="https://enogenai.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EnoGen AI – Wine Meets Artificial Intelligence" />
+  <meta name="twitter:description" content="Discover the future of winemaking through AI, genomics, and microbiome-driven fermentation." />
+  <meta name="twitter:image" content="https://enogenai.com/hero-enogen.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9f7f4;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: #5e2c66;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #5e2c66;
+      font-weight: 600;
+    }
+
+    #menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #5e2c66;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0;
+        text-align: left;
+      }
+
+      #menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #5e2c66;
+        margin-left: auto;
+  }
+}
+      }
+      .module-card img {
+        width: 120px !important;
+    }
+
+     .module-card p {
+       font-size: 0.9rem;
+    }
+}
+
+    header {
+      background: url('hero-enogen.jpg') center/cover no-repeat;
+      height: 100vh;
+      width: 100%;
+    }
+    section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+footer {
+  background: #5e2c66;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.module-card {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.module-card h3 {
+  margin: 0.5rem 0;
+  color: #5e2c66;
+}
+
+.module-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+  
+.section-light {
+  background-color: #f5efe6;
+}
+
+.section-dark {
+  background-color: #ece9e4;
+}
+
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+  transition: background-color 0.3s ease-in-out;
+  border-top: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e2c66;
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    background: url('hero-enogen.jpg') center center/cover no-repeat !important;
+    height: 60vh !important;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  #menu-toggle {
+    align-self: right;
+  }
+  .section img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .section div img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .section div div {
+    padding-top: 1rem;
+    font-size: 0.95rem;
+  }
+  .section div {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: justify;
+  }
+}
+
+    
     iframe { width: 100%; height: 90vh; border: 0; }
   </style>
   <!-- Auth0 SPA SDK -->
@@ -14,13 +244,22 @@
   <script src="auth0-config.js"></script>
 </head>
 <body>
-  <nav style="display:flex;justify-content:space-between;padding:1rem 2rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <strong class="brand">EnoGen AI</strong>
+  <nav style="display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <strong class="brand">EnoGen AI</strong>
+      <span id="username" style="font-weight:600;color:#5e2c66;"></span>
+    </div>
     <button id="logout" style="padding:0.5rem 1rem;background:#5e2c66;color:#fff;border:none;border-radius:4px;cursor:pointer;">Log out</button>
   </nav>
 
+  <!-- Embed TANNINO app -->
   <iframe src="http://127.0.0.1:7860/" title="TANNINO app"></iframe>
-
+  <footer>
+    <img src="Logo FINAL OK.png" alt="EnoGen Logo" style="width: 120px; display:block; margin: 1rem auto;">
+    <p>Contact: <a href="mailto:enogenai@gmail.com" style="color: #fff;">enogenai@gmail.com</a> | Phone: +39 3466608788 | Location: L’Aquila, Italy</p>
+    <br>
+    <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
+  </footer>
 <script>
   const cfg = window.authConfig;
   let auth0Client = null;
@@ -34,12 +273,27 @@
       useRefreshTokens: true
     });
 
+    // Handle Auth0 redirect back from login (Authorization Code with PKCE)
+    if (window.location.search.includes('code=') && window.location.search.includes('state=')) {
+      try {
+        await auth0Client.handleRedirectCallback();
+        // Clean the querystring parameters
+        window.history.replaceState({}, document.title, '/dashboard');
+      } catch (e) {
+        console.error('handleRedirectCallback error', e);
+      }
+    }
+
     const isAuthenticated = await auth0Client.isAuthenticated();
     if (!isAuthenticated) {
       return window.location.href = '/login';
     }
 
-    // ✅ Aggiunta listener logout solo dopo init
+    // Show logged user name/email
+    const user = await auth0Client.getUser();
+    document.getElementById('username').textContent = user.name || user.email;
+
+    // Logout listener
     document.getElementById('logout').addEventListener('click', async () => {
       await auth0Client.logout({
         returnTo: window.location.origin + '/login'
