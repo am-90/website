@@ -261,44 +261,51 @@ section h2 {
     <p>&copy; 2025 EnoGen AI. All rights reserved.</p>
   </footer>
 <script>
-  const cfg = window.authConfig;
+  const cfg = window.authConfig;     // dominio, clientId, (audience)
   let auth0Client = null;
 
   const initAuth0 = async () => {
+    /* 1️⃣  inizializza il client SPA  */
     auth0Client = await createAuth0Client({
       domain: cfg.domain,
       client_id: cfg.clientId,
       audience: cfg.audience,
       cacheLocation: 'localstorage',
-      useRefreshTokens: true
+      useRefreshTokens: true,
+      /* 👇  fondamentale: deve combaciare con quello usato nel Lock */
+      authorizationParams: {
+        redirect_uri: window.location.origin + '/dashboard'
+      }
     });
 
-    // Handle Auth0 redirect back from login (Authorization Code with PKCE)
-    if (window.location.search.includes('code=') && window.location.search.includes('state=')) {
+    /* 2️⃣  gestisci il redirect al rientro da Auth0 */
+    if (location.search.includes('code=') && location.search.includes('state=')) {
       try {
         await auth0Client.handleRedirectCallback();
-        // Clean the querystring parameters
-        window.history.replaceState({}, document.title, '/dashboard');
+        /* pulisci la querystring */
+        history.replaceState({}, document.title, '/dashboard');
       } catch (e) {
-        console.error('handleRedirectCallback error', e);
+        console.error('Auth0 callback error:', e);
       }
     }
 
+    /* 3️⃣  verifica lo stato di autenticazione */
     const isAuthenticated = await auth0Client.isAuthenticated();
     if (!isAuthenticated) {
-      return window.location.href = '/login';
+      /* se per qualche motivo non sei autenticato, torna al login */
+      return location.assign('/login');
     }
 
-    // Show logged user name/email
+    /* 4️⃣  utente autenticato: mostra nome o email */
     const user = await auth0Client.getUser();
     document.getElementById('username').textContent = user.name || user.email;
 
-    // Logout listener
-    document.getElementById('logout').addEventListener('click', async () => {
-      await auth0Client.logout({
-        returnTo: window.location.origin + '/login'
-      });
-    });
+    /* 5️⃣  aggancia il logout (ora che il client è pronto) */
+    document.getElementById('logout').addEventListener('click', () =>
+      auth0Client.logout({
+        logoutParams: { returnTo: location.origin + '/login' }
+      })
+    );
   };
 
   initAuth0();
