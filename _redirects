@@ -1,2 +1,2 @@
-/login /login.html 200
-/dashboard /dashboard.html 200
+/dashboard    /login    302!    Role=*
+/dashboard    200      Role=member
