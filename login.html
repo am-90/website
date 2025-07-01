@@ -76,7 +76,7 @@
   </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Navbar mobile toggle
     const toggle = document.getElementById('menu-toggle');
     const links = document.getElementById('menu-links');
@@ -92,18 +92,20 @@
         params: {
           scope: 'openid profile email',
           audience: cfg.audience
-        }}
-      }},
-      theme: {{
+        }
+      },
+      theme: {
         primaryColor: '#5e2c66'
-      }},
-      languageDictionary: {{
+      },
+      languageDictionary: {
         title: 'Welcome'
-      }},
+      },
       closable: false
-    }});
+    });
+
     lock.show();
-  }});
+  });
 </script>
+
 </body>
 </html>
