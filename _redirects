@@ -1,0 +1,2 @@
+/dashboard    /login    302!    Role=*
+/dashboard    200      Role=member
