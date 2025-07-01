@@ -44,9 +44,9 @@
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
   document.getElementById('logout').onclick = () =>
-      auth0.logout({
-      returnTo: window.location.origin + '/login',
-      client_id: cfg.clientId
+auth0.logout({
+  logoutParams: {
+    returnTo: window.location.origin + '/login'
 })();
 </script>
 
