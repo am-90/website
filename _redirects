@@ -1,0 +1,2 @@
+/dashboard    /login    401!    Provider=auth0
+/dashboard    200      Role=member
