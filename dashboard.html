@@ -43,8 +43,15 @@
   }
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
-  document.getElementById('logout').onclick = () =>
-    auth0.logout({ logoutParams: { returnTo: window.location.origin + '/login' } });
+  // Logout manuale (assicura l'eliminazione della sessione Auth0)
+document.getElementById('logout').addEventListener('click', () => {
+  // Costruisci l'URL di logout Auth0
+  const cfg = window.authConfig;
+  const returnTo = encodeURIComponent(window.location.origin + '/login');
+  const logoutUrl = `https://${cfg.domain}/v2/logout?client_id=${cfg.clientId}&returnTo=${returnTo}`;
+  // Reindirizza per terminare la sessione
+  window.location.href = logoutUrl;
+});
 })();
 </script>
 </body>
