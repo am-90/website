@@ -43,8 +43,11 @@ let auth0Client;
     } catch(e){ console.error(e); }
   }
 
-  const isAuth = await auth0Client.isAuthenticated();
-  if(!isAuth){ return location.assign('/login'); }
+  const isAuthenticated = await auth0Client.isAuthenticated();
+console.log('Authenticated:', isAuthenticated);
+if (!isAuthenticated) {
+  return location.assign('/login');
+}
 
   const user = await auth0Client.getUser();
   document.getElementById('username').textContent = user.name || user.email;
