@@ -26,24 +26,32 @@
   <iframe src="http://127.0.0.1:7860/" title="TANNINO"></iframe>
 <script>
 (async () => {
-  const cfg = window.authConfig;
-  const auth0 = await createAuth0Client({
+  const cfg    = window.authConfig;
+  const auth0  = await createAuth0Client({
     domain: cfg.domain,
     client_id: cfg.clientId,
     cacheLocation: 'localstorage',
     useRefreshTokens: true,
-    authorizationParams: { redirect_uri: window.location.origin + '/dashboard' }
+    authorizationParams: {
+      redirect_uri: window.location.origin + '/dashboard'
+    }
   });
+
+  // gestione del callback code+state
   if (location.search.includes('code=') && location.search.includes('state=')) {
     await auth0.handleRedirectCallback();
     history.replaceState({}, document.title, '/dashboard');
   }
+
+  // verifica autenticazione
   if (!(await auth0.isAuthenticated())) {
     return location.assign('/login');
   }
+
+  // mostra nome utente
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
-   
+
   // *** LOGOUT BUTTON FIX ***
   const btn = document.getElementById('logout');
   btn.addEventListener('click', () => {
