@@ -7,19 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    body {{
+    body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-    }}
-    main {{
+    }
+    main {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
-    }}
-    .login-card {{
+    }
+    .login-card {
       background: #fff;
       padding: 2.5rem;
       border-radius: 12px;
@@ -27,23 +27,22 @@
       max-width: 420px;
       width: 100%;
       text-align: center;
-    }}
-    #auth0-login-container {{
+    }
+    #auth0-login-container {
       margin-top: 1rem;
-    }}
-    footer {{
+    }
+    footer {
       background: #5e2c66;
       color: #fff;
       padding: 2rem;
       text-align: center;
-    }}
+    }
   </style>
   <!-- Auth0 Lock -->
   <script src="auth0-config.js"></script>
   <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
 </head>
 <body>
-  <!-- Navbar (same layout) -->
   <nav>
     <div class="nav-container">
       <strong class="brand">EnoGen AI</strong>
@@ -63,7 +62,6 @@
     <div class="login-card">
       <h2 style="color:#5e2c66; margin-bottom: 0.5rem;">Member Area</h2>
       <p style="margin-bottom:1.2rem;">Log in with your credentials to access TANNINO.</p>
-      <!-- Auth0 Lock container -->
       <div id="auth0-login-container"></div>
     </div>
   </main>
@@ -77,12 +75,10 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Navbar mobile toggle
     const toggle = document.getElementById('menu-toggle');
     const links = document.getElementById('menu-links');
     toggle.addEventListener('click', () => links.classList.toggle('show'));
 
-    // Auth0 Lock initialization
     const cfg = window.authConfig;
     var lock = new Auth0Lock(cfg.clientId, cfg.domain, {
       container: 'auth0-login-container',
@@ -94,6 +90,7 @@
           audience: cfg.audience
         }
       },
+      allowSignUp: false,
       theme: {
         primaryColor: '#5e2c66'
       },
@@ -106,6 +103,5 @@
     lock.show();
   });
 </script>
-
 </body>
 </html>
