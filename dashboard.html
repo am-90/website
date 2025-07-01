@@ -25,57 +25,26 @@
   </nav>
   <iframe src="http://127.0.0.1:7860/" title="TANNINO"></iframe>
 <script>
-;(async () => {
+(async () => {
   const cfg = window.authConfig;
-  // 1️⃣ Inizializza Auth0 client
   const auth0 = await createAuth0Client({
     domain: cfg.domain,
     client_id: cfg.clientId,
     cacheLocation: 'localstorage',
     useRefreshTokens: true,
-    authorizationParams: {
-      redirect_uri: window.location.origin + '/dashboard'
-    }
+    authorizationParams: { redirect_uri: window.location.origin + '/dashboard' }
   });
-
-  // 2️⃣ Gestione del redirect dopo login (code + state)
   if (location.search.includes('code=') && location.search.includes('state=')) {
-    try {
-      await auth0.handleRedirectCallback();
-      history.replaceState({}, document.title, '/dashboard');
-    } catch (e) {
-      console.error('Error handling redirect callback:', e);
-    }
+    await auth0.handleRedirectCallback();
+    history.replaceState({}, document.title, '/dashboard');
   }
-
-  // 3️⃣ Verifica se sei autenticato
-  const isAuth = await auth0.isAuthenticated();
-  console.log('Authenticated:', isAuth);
-  if (!isAuth) {
-    // Se non sei loggato, torna al login
+  if (!(await auth0.isAuthenticated())) {
     return location.assign('/login');
   }
-
-  // 4️⃣ Se loggato, mostra il nome
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
-
-  // 5️⃣ Adesso che la pagina è “autenticata” e il DOM è pronto, aggancia il logout
-  const btn = document.getElementById('logout');
-  if (!btn) {
-    console.error('Logout button not found!');
-    return;
-  }
-  btn.addEventListener('click', () => {
-    // Costruisci l'URL di logout Auth0
-    const returnTo = encodeURIComponent(window.location.origin + '/login');
-    const logoutUrl =
-      `https://${cfg.domain}/v2/logout` +
-      `?client_id=${cfg.clientId}` +
-      `&returnTo=${returnTo}`;
-    console.log('Logging out, redirecting to:', logoutUrl);
-    window.location.href = logoutUrl;
-  });
+  document.getElementById('logout').onclick = () =>
+    auth0.logout({ logoutParams: { returnTo: window.location.origin + '/login' } });
 })();
 </script>
 
