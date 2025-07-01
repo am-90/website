@@ -309,9 +309,10 @@ section h2 {
     var lock = new Auth0Lock(cfg.clientId, cfg.domain, {
       container: 'auth0-login-container',
       auth: {
+        redirectUrl: window.location.origin + '/dashboard',
         responseType: 'code',
         pkce: treue,
-        redirectUrl: window.location.origin + '/dashboard',
+        
         params: {
           scope: 'openid profile email',
           audience: cfg.audience
