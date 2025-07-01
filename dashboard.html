@@ -25,33 +25,54 @@
   </nav>
   <iframe src="http://127.0.0.1:7860/" title="TANNINO"></iframe>
 <script>
-(async () => {
+;(async () => {
   const cfg = window.authConfig;
   const auth0 = await createAuth0Client({
     domain: cfg.domain,
     client_id: cfg.clientId,
     cacheLocation: 'localstorage',
     useRefreshTokens: true,
-    authorizationParams: { redirect_uri: window.location.origin + '/dashboard' }
+    authorizationParams: {
+      redirect_uri: window.location.origin + '/dashboard'
+    }
   });
+
+  // 1️⃣ Gestione del redirect iniziale con code+state
   if (location.search.includes('code=') && location.search.includes('state=')) {
-    await auth0.handleRedirectCallback();
-    history.replaceState({}, document.title, '/dashboard');
+    try {
+      await auth0.handleRedirectCallback();
+      history.replaceState({}, document.title, '/dashboard');
+    } catch (e) {
+      console.error('Error handling redirect callback:', e);
+    }
   }
-  if (!(await auth0.isAuthenticated())) {
+
+  // 2️⃣ Verifica stato autenticazione
+  const isAuth = await auth0.isAuthenticated();
+  console.log('Authenticated:', isAuth);
+  if (!isAuth) {
     return location.assign('/login');
   }
+
+  // 3️⃣ Mostra utente loggato
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
-  // Logout manuale (assicura l'eliminazione della sessione Auth0)
-document.getElementById('logout').addEventListener('click', () => {
-  // Costruisci l'URL di logout Auth0
-  const cfg = window.authConfig;
-  const returnTo = encodeURIComponent(window.location.origin + '/login');
-  const logoutUrl = `https://${cfg.domain}/v2/logout?client_id=${cfg.clientId}&returnTo=${returnTo}`;
-  // Reindirizza per terminare la sessione
-  window.location.href = logoutUrl;
-});
+
+  // 4️⃣ Logout manuale verso l’endpoint Auth0
+  const btn = document.getElementById('logout');
+  if (!btn) {
+    console.error('Logout button not found!');
+    return;
+  }
+  btn.addEventListener('click', () => {
+    const returnTo = encodeURIComponent(window.location.origin + '/login');
+    const logoutUrl =
+      `https://${cfg.domain}/v2/logout` +
+      `?client_id=${cfg.clientId}` +
+      `&returnTo=${returnTo}`;
+    console.log('Logging out, redirecting to:', logoutUrl);
+    window.location.href = logoutUrl;
+  });
 })();
 </script>
 </body>
