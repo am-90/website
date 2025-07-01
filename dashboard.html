@@ -25,47 +25,55 @@
   </nav>
   <iframe src="http://127.0.0.1:7860/" title="TANNINO"></iframe>
 <script>
-(async () => {
-  const cfg    = window.authConfig;
-  const auth0  = await createAuth0Client({
-    domain: cfg.domain,
-    client_id: cfg.clientId,
-    cacheLocation: 'localstorage',
-    useRefreshTokens: true,
+;(async () => {
+  const cfg   = window.authConfig;
+  const auth0 = await createAuth0Client({
+    domain:            cfg.domain,
+    client_id:         cfg.clientId,
+    cacheLocation:     'localstorage',
+    useRefreshTokens:  true,
     authorizationParams: {
       redirect_uri: window.location.origin + '/dashboard'
     }
   });
 
-  // gestione del callback code+state
+  // 1️⃣ Handle redirect callback (code+state), but ignore invalid_state
   if (location.search.includes('code=') && location.search.includes('state=')) {
-    await auth0.handleRedirectCallback();
+    try {
+      await auth0.handleRedirectCallback();
+    } catch (e) {
+      if (e.error === 'invalid_state' || e.name === 'InvalidStateError') {
+        console.warn('Auth0 warning: invalid_state, clearing query and continuing');
+      } else {
+        console.error('Auth0 callback error', e);
+      }
+    }
+    // Clean up URL regardless
     history.replaceState({}, document.title, '/dashboard');
   }
 
-  // verifica autenticazione
-  if (!(await auth0.isAuthenticated())) {
+  // 2️⃣ Ensure we’re authenticated
+  const isAuth = await auth0.isAuthenticated();
+  if (!isAuth) {
     return location.assign('/login');
   }
 
-  // mostra nome utente
+  // 3️⃣ Show user
   const user = await auth0.getUser();
   document.getElementById('username').textContent = user.name || user.email;
 
-  // *** LOGOUT BUTTON FIX ***
+  // 4️⃣ Logout button
   const btn = document.getElementById('logout');
   btn.addEventListener('click', () => {
-    // costruisci URL di logout Auth0
     const returnTo = encodeURIComponent(window.location.origin + '/login');
-    const logoutUrl = 
-      `https://${cfg.domain}/v2/logout` +
-      `?client_id=${cfg.clientId}` +
+    const logoutUrl =
+      `https://${cfg.domain}/v2/logout?client_id=${cfg.clientId}` +
       `&returnTo=${returnTo}`;
-    // redirect per invalidare la sessione
     window.location.href = logoutUrl;
   });
 })();
 </script>
+
 
 </body>
 </html>
