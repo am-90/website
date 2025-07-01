@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – EnoGen AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Auth0 Lock library -->
+  <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
+  <script src="auth0-config.js"></script>
+  <style>
+    body { display:flex; flex-direction:column; min-height:100vh; margin:0; }
+    nav { padding:1rem; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+    main { flex:1; display:flex; align-items:center; justify-content:center; padding:2rem; }
+    .login-card {
+      background:#fff; padding:2rem; border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1); max-width:360px; width:100%;
+    }
+    #auth0-lock-container { margin-top:1rem; }
+    footer { padding:1rem; background:#5e2c66; color:#fff; text-align:center; }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong style="font-family:'Inter',sans-serif; color:#5e2c66; font-size:1.2rem;">EnoGen AI</strong>
+  </nav>
+  <main>
+    <div class="login-card">
+      <h2 style="color:#5e2c66; margin-bottom:0.5rem;">Member Login</h2>
+      <div id="auth0-lock-container"></div>
+    </div>
+  </main>
+  <footer>&copy; 2025 EnoGen AI</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cfg = window.authConfig;
+      const lock = new Auth0Lock(cfg.clientId, cfg.domain, {
+        container: 'auth0-lock-container',
+        auth: {
+          redirectUrl: window.location.origin + '/dashboard',
+          responseType: 'code',
+          pkce: true,
+          params: { scope: 'openid profile email' }
+        },
+        theme: { primaryColor: '#5e2c66' },
+        languageDictionary: { title: 'Login to EnoGen AI' },
+        closable: false
+      });
+      lock.show();
+    });
+  </script>
+</body>
+</html>
