@@ -1,5 +1,9 @@
 /assets/*    /assets/:splat   200
 /favicon.png /favicon.png     200
+/sitemap.xml /sitemap.xml     200
+/robots.txt  /robots.txt      200
+/contact-form.html /contact-form.html 200
+/thanks.html /thanks.html     200
 /home.html       /   301!
 /about.html      /   301!
 /technology.html /   301!
