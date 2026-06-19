@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /contact-form.html
 Disallow: /thanks.html
+Disallow: /newsletter-form.html
+Disallow: /newsletter-thanks.html
 
 Sitemap: https://enogenai.com/sitemap.xml

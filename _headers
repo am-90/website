@@ -3,3 +3,9 @@
 
 /thanks.html
   X-Robots-Tag: noindex, nofollow
+
+/newsletter-form.html
+  X-Robots-Tag: noindex, nofollow
+
+/newsletter-thanks.html
+  X-Robots-Tag: noindex, nofollow

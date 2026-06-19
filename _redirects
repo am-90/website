@@ -4,6 +4,9 @@
 /robots.txt  /robots.txt      200
 /contact-form.html /contact-form.html 200
 /thanks.html /thanks.html     200
+/newsletter.js /newsletter.js 200
+/newsletter-form.html /newsletter-form.html 200
+/newsletter-thanks.html /newsletter-thanks.html 200
 /home.html       /   301!
 /about.html      /   301!
 /technology.html /   301!
