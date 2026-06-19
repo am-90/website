@@ -1,3 +1,13 @@
 /assets/*    /assets/:splat   200
 /favicon.png /favicon.png     200
+/home.html       /   301!
+/about.html      /   301!
+/technology.html /   301!
+/platform.html   /   301!
+/business.html   /   301!
+/contact.html    /   301!
+/login.html      /   301!
+/dashboard.html  /   301!
+/login           /   301!
+/dashboard       /   301!
 /*           /index.html      200!
